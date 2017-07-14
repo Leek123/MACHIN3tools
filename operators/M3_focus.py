@@ -25,6 +25,12 @@ class Focus(bpy.types.Operator):
                         mod.show_viewport = False
                     elif string == "ON":
                         mod.show_viewport = True
+                if "Array" in mod.name or "array_array" in mod.name:
+                    print("found array: %s" % (mod.name))
+                    if string == "HIDE":
+                        mod.show_viewport = False
+                    elif string == "SHOW":
+                        mod.show_viewport = True
 
     def get_localview(self):
         localview = False
